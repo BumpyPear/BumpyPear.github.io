@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Batsaikhan - Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 15px;
+        }
+
+        .institution {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .location {
+            float: right;
+            color: #7f8c8d;
+        }
+
+        .degree {
+            font-style: italic;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bryan Batsaikhan</h1>
+            <div class="contact-info">
+                <a href="tel:925-375-8055">(925)-375-8055</a> |
+                <a href="mailto:bryanbatsaikhan@gmail.com">bryanbatsaikhan@gmail.com</a> |
+                <a href="#">LinkedIn</a> |
+                <a href="#">GitHub</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="institution">University of California, Davis<span class="location">Davis, CA</span></div>
+                <div class="degree">Bachelor of Science in Computer Science | GPA: 3.61/4.0</div>
+                <div>Expected Graduation: June 2024</div>
+                <div><strong>Coursework:</strong> Introduction to AI, Computer Networks, Software Engineering</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div class="skill-category">
+                <strong>Languages:</strong> C++, Python, JavaScript, Haskell, Prolog, Erlang
+            </div>
+            <div class="skill-category">
+                <strong>Developer Tools:</strong> Git, Docker
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <strong>Battleship AI</strong> <span class="location">May 2024</span>
+                <ul>
+                    <li>Developed an AI to play the game Battleship.</li>
+                    <li>Tested AI against traditional methods of game playing such as even and random.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <strong>Website Crawling</strong> <span class="location">November 2024</span>
+                <ul>
+                    <li>Used Selenium and BrowserMob Proxy to visit 1000 websites and record traffic.</li>
+                    <li>Analyzed traffic stored by unpacking stored JSON data to detect third party cookies and web requests.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <strong>Tutoring</strong>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
