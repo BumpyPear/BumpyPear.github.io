@@ -4,153 +4,327 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan Batsaikhan - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --ink: #1a1a1a;
+            --accent: #1a3a5c;
+            --rule: #c8b89a;
+            --muted: #666;
+            --bg: #faf8f4;
+            --paper: #fffefb;
         }
 
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 11.5pt;
+            line-height: 1.55;
+            background: var(--bg);
+            color: var(--ink);
+            padding: 32px 16px;
+        }
+
+        .page {
+            background: var(--paper);
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 52px 60px 60px;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.09), 0 0 0 1px rgba(0,0,0,0.04);
+        }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 14px;
+            margin-bottom: 22px;
         }
 
         h1 {
-            color: #2c3e50;
-            margin-bottom: 5px;
+            font-family: 'EB Garamond', serif;
+            font-size: 28pt;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            color: var(--accent);
+            margin-bottom: 6px;
         }
 
-        .contact-info {
-            color: #34495e;
-            margin-bottom: 20px;
-        }
-
-        .section {
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-top: 20px;
-        }
-
-        .education-item, .project-item {
-            margin-bottom: 15px;
-        }
-
-        .institution {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .location {
-            float: right;
-            color: #7f8c8d;
-        }
-
-        .degree {
-            font-style: italic;
-        }
-
-        .skills-list {
+        .contact {
+            font-family: 'DM Mono', monospace;
+            font-size: 8.5pt;
+            color: var(--muted);
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 6px 0;
         }
 
-        .skill-category {
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: #3498db;
+        .contact a {
+            color: var(--muted);
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .contact a:hover { color: var(--accent); text-decoration: underline; }
+
+        .sep {
+            margin: 0 8px;
+            color: var(--rule);
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'DM Mono', monospace;
+            font-size: 7.5pt;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+        }
+
+        /* Entry rows */
+        .entry {
+            margin-bottom: 13px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 2px;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            font-size: 11.5pt;
+            color: var(--ink);
+        }
+
+        .entry-tech {
+            font-family: 'DM Mono', monospace;
+            font-size: 8pt;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        .entry-date {
+            font-family: 'DM Mono', monospace;
+            font-size: 8pt;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .entry-sub {
+            font-style: italic;
+            color: var(--muted);
+            font-size: 10.5pt;
+            margin-bottom: 2px;
+        }
+
+        .entry-loc {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 3px;
+        }
+
+        li {
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+            font-size: 11pt;
+            color: #2a2a2a;
+        }
+
+        li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--rule);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            gap: 4px;
+        }
+
+        .skill-row {
+            font-size: 11pt;
+        }
+
+        .skill-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 8pt;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-right: 6px;
+        }
+
+        /* Education GPA inline */
+        .gpa {
+            font-family: 'DM Mono', monospace;
+            font-size: 8pt;
+            color: var(--muted);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Bryan Batsaikhan</h1>
-            <div class="contact-info">
-                <a href="tel:925-375-8055">(925)-375-8055</a> |
-                <a href="mailto:bryanbatsaikhan@gmail.com">bryanbatsaikhan@gmail.com</a> |
-                <a href="https://www.linkedin.com/in/bryan-b-2823b124a/">LinkedIn</a> |
-                <a href="https://github.com/BumpyPear">GitHub</a>
-            </div>
-        </header>
+<div class="page">
 
-        <section class="section">
-            <h2>Education</h2>
-            <div class="education-item">
-                <div class="institution">University of California, Davis<span class="location">Davis, CA</span></div>
-                <div class="degree">Bachelor of Science in Computer Science | GPA: 3.63/4.0</div>
-                <div>Expected Graduation: June 2025</div>
-                <div><strong>Coursework:</strong> AI, Deep Learning, Machine Learning, Agent-Based Modeling, Computer Networks, Software Engineering, Operating Systems, Algorithm Design</div>
-            </div>
-        </section>
+    <header>
+        <h1>Bryan Batsaikhan</h1>
+        <div class="contact">
+            <a href="tel:9253758055">(925) 375-8055</a>
+            <span class="sep">·</span>
+            <a href="mailto:bryanbatsaikhan@gmail.com">bryanbatsaikhan@gmail.com</a>
+            <span class="sep">·</span>
+            <a href="https://www.linkedin.com/in/bryan-b-2823b124a/" target="_blank">linkedin.com/bryanbatsaikhan</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/BumpyPear" target="_blank">github.com/BumpyPear</a>
+        </div>
+    </header>
 
-        <section class="section">
-            <h2>Skills</h2>
-            <div class="skill-category">
-                <strong>Languages:</strong> C++, Python, Java, Haskell, Prolog, Erlang, Rust, R, SQL
+    <!-- Education -->
+    <section>
+        <h2>Education</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">University of California, Davis</span>
+                <span class="entry-date">Davis, California</span>
             </div>
-            <div class="skill-category">
-                <strong>Technologies:</strong> TensorFlow, scikit-learn, Spring Boot, Selenium, Docker, Git
+            <div class="entry-loc">
+                <span class="entry-sub">Bachelor of Science in Computer Science &nbsp;<span class="gpa">GPA: 3.63 / 4.0</span></span>
+                <span class="entry-date">June 2025</span>
             </div>
-        </section>
+            <ul>
+                <li><span style="font-weight:600">Coursework:</span> AI, Deep Learning, Machine Learning, Agent-Based Modeling, Computer Networks, Software Engineering, Operating Systems, Algorithm Design</li>
+            </ul>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Projects</h2>
-            <div class="project-item">
-                <strong>Battleship AI</strong> <span class="location">May 2024</span>
-                <ul>
-                    <li>Developed a neural network using TensorFlow to play the game Battleship with a team.</li>
-                    <li>Tested AI against traditional methods of game playing.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <strong>Website Crawling</strong> <span class="location">November 2024</span>
-                <ul>
-                    <li>Built automated web crawler using Selenium to analyze traffic across 1000 websites.</li>
-                    <li>Analyzed traffic stored by unpacking stored JSON data to detect third party cookies and web requests.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <strong>Social Media Post Moderation</strong> <span class="location">February 2025</span>
-                <ul>
-                    <li>Built content moderation system with Spring Boot microservices, implementing automated filtering and AI-generated tagging using Ollama.</li>
-                    <li>Made use of Spring Boot and REST API to send post content as an HTTP Post request to microservices.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <strong>Local File System</strong> <span class="location">March 2025</span>
-                <ul>
-                    <li>Implemented system utilities for a basic Unix file system, such as list files, concatenate, create, copy, and delete.</li>
-                    <li>Made use of inode and data bitmaps, inode tables, and data regions to implement system utilities.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <strong>Wine Quality Prediction</strong> <span class="location">May 2025</span>
-                <ul>
-                    <li>Led team to build wine quality predictors based on chemical properties of Portuguese wine with machine learning algorithms using scikit-learn.</li>
-                    <li>Developed a random forest model, a polynomial regression model, and a support vector machine to grade the wine from one to ten.</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Projects -->
+    <section>
+        <h2>Projects</h2>
 
-    </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Wine Quality Prediction &nbsp;<span class="entry-tech">Python, scikit-learn</span></span>
+                <span class="entry-date">May 2025</span>
+            </div>
+            <ul>
+                <li>Led a team in developing a multi-model ML pipeline (random forest, polynomial regression, SVM) to predict wine quality scores from chemical properties of Portuguese wine datasets, hosting daily meetings and managing task division across team members.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Local File System &nbsp;<span class="entry-tech">C++, Systems Programming</span></span>
+                <span class="entry-date">March 2025</span>
+            </div>
+            <ul>
+                <li>Implemented a fully functional Unix-style file system in C++, supporting core utilities including file listing, concatenation, creation, copying, and deletion.</li>
+                <li>Leveraged low-level data structures including inode/data bitmaps, inode tables, and data regions to replicate OS-level file management behavior.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Social Media Post Moderation &nbsp;<span class="entry-tech">Spring Boot, REST API, Ollama</span></span>
+                <span class="entry-date">February 2025</span>
+            </div>
+            <ul>
+                <li>Architected a scalable content moderation pipeline using Spring Boot microservices with automated filtering and AI-powered content tagging via Ollama.</li>
+                <li>Integrated RESTful HTTP communication between services to enable real-time post evaluation at scale.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Website Crawling &nbsp;<span class="entry-tech">Selenium, Python, JSON</span></span>
+                <span class="entry-date">November 2024</span>
+            </div>
+            <ul>
+                <li>Engineered an automated web crawler using Selenium to generate and collect HAR files across 950+ of the top 1,000 websites, implementing retry logic and timeout handling to maximize coverage.</li>
+                <li>Parsed JSON-structured HAR files to build frequency dictionaries of third-party domains and cookies, identifying top domains including yandex.ru (195 requests), demdex.net (143), and pxl.iqm.com (77).</li>
+                <li>Analyzed the 10 most prevalent cookies (including Cloudflare bot management and ID-sync trackers) by cross-referencing Cookiepedia, surfacing insights into third-party tracking and web privacy compliance.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Battleship AI &nbsp;<span class="entry-tech">TensorFlow, Python</span></span>
+                <span class="entry-date">May 2024</span>
+            </div>
+            <ul>
+                <li>Designed and trained a deep neural network using TensorFlow to autonomously play Battleship via reinforcement learning, benchmarking it against rule-based strategies to evaluate model performance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+        <h2>Experience</h2>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Mathnasium of Pleasant Hill</span>
+                <span class="entry-date">Pleasant Hill, California</span>
+            </div>
+            <div class="entry-loc">
+                <span class="entry-sub">Math Tutor</span>
+                <span class="entry-date">August 2025 – Present</span>
+            </div>
+            <ul>
+                <li>Deliver personalized math instruction to hundreds of students following the Mathnasium curriculum, adapting pace and approach to individual skill levels across grade levels.</li>
+                <li>Guided 5+ students from failing grades to the top of their class in math, with long-term students consistently advancing ahead of grade-level peers.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Monument Crisis Center</span>
+                <span class="entry-date">Pleasant Hill, California</span>
+            </div>
+            <div class="entry-loc">
+                <span class="entry-sub">ESL Volunteer Tutor</span>
+                <span class="entry-date">2021</span>
+            </div>
+            <ul>
+                <li>Led group English language lessons for 30+ children from underserved communities, adapting instruction to accommodate varying proficiency levels.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-row">
+                <span class="skill-label">Languages</span>
+                C++, Python, Java, Haskell, Prolog, Erlang, Rust, R, SQL
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Technologies</span>
+                TensorFlow, scikit-learn, Spring Boot, Selenium, Docker, Git
+            </div>
+        </div>
+    </section>
+
+</div>
 </body>
 </html>
